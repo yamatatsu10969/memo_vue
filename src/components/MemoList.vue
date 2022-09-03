@@ -1,10 +1,10 @@
 <template>
-	<div>MemoApp</div>
+  <div class="container">メモリスト</div>
 </template>
 
 <script>
 export default {
-	name: 'MemoApp',
+  name: "MemoList",
 };
 </script>
 
