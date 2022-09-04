@@ -2,7 +2,7 @@
   <div class="container">メモリスト</div>
   <ul>
     <li v-for="memo in memos" :key="memo.id">
-      {{ memo.content }}
+      {{ this.title(memo) }}
     </li>
   </ul>
 </template>
@@ -13,6 +13,11 @@ export default {
   computed: {
     memos() {
       return this.$store.state.memos;
+    },
+  },
+  methods: {
+    title(memo) {
+      return memo.content.split("\n")[0];
     },
   },
 };
