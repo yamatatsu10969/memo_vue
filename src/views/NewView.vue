@@ -5,7 +5,7 @@
         <MemoList />
       </div>
       <div class="col-6">
-        <MemoForm />
+        <MemoForm memo="" />
       </div>
     </div>
   </div>

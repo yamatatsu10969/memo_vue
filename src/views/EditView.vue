@@ -1,14 +1,16 @@
 <template>
   <div class="container">
-    EditView params: {{ $route.params.id }} EditView memo: {{ memo.content }}
-    <div class="row">
-      <div class="col-6">
-        <MemoList />
-      </div>
-      <div class="col-6">
-        <MemoForm />
+    <div v-if="memo">
+      <div class="row">
+        <div class="col-6">
+          <MemoList />
+        </div>
+        <div class="col-6">
+          <MemoForm :memo="memo" />
+        </div>
       </div>
     </div>
+    <p v-else>指定されたメモはありません</p>
   </div>
 </template>
 

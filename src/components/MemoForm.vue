@@ -6,9 +6,10 @@
 <script>
 export default {
   name: "MemoForm",
+  props: ["memo"],
   data() {
     return {
-      content: "",
+      content: this.memo.content,
     };
   },
   methods: {
