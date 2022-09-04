@@ -5,6 +5,12 @@ export default createStore({
     memos: []
   },
   getters: {
+    getAll: (state) => {
+      return state.memos;
+    },
+    hasMemos: (state) => {
+      return state.memos.length;
+    }
   },
   mutations: {
     save(state, content) {

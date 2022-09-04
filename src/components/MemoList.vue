@@ -12,10 +12,10 @@ export default {
   name: "MemoList",
   computed: {
     memos() {
-      return this.$store.state.memos;
+      return this.$store.getters.getAll;
     },
     hasMemos() {
-      return this.$store.state.memos.length;
+      return this.$store.getters.hasMemos;
     },
   },
   methods: {
