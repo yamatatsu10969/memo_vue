@@ -1,5 +1,7 @@
 <template>
   <div class="container">メモリスト</div>
+  <div>メモ1</div>
+  <div>メモ2</div>
 </template>
 
 <script>
