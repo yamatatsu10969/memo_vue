@@ -12,7 +12,7 @@ export default createStore({
         id: state.memos.length + 1,
         content: content,
       }
-      state.memos.push(memo)
+      state.memos.unshift(memo)
     }
   },
   actions: {
