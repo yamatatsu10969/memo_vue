@@ -1,9 +1,10 @@
 <template>
-  <ul>
+  <ul v-if="hasMemos">
     <li v-for="memo in memos" :key="memo.id">
       {{ this.title(memo) }}
     </li>
   </ul>
+  <p v-else>メモはありません</p>
 </template>
 
 <script>
@@ -12,6 +13,9 @@ export default {
   computed: {
     memos() {
       return this.$store.state.memos;
+    },
+    hasMemos() {
+      return this.$store.state.memos.length;
     },
   },
   methods: {
