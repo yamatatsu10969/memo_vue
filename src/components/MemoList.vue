@@ -1,5 +1,4 @@
 <template>
-  <div class="container">メモリスト</div>
   <ul>
     <li v-for="memo in memos" :key="memo.id">
       {{ this.title(memo) }}
