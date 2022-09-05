@@ -7,6 +7,7 @@
     </li>
   </ul>
   <p v-else>メモはありません</p>
+  <router-link to="/new">+</router-link>
 </template>
 
 <script>
