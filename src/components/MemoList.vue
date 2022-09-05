@@ -1,7 +1,9 @@
 <template>
   <ul v-if="hasMemos">
     <li v-for="memo in memos" :key="memo.id">
-      {{ this.title(memo) }}
+      <router-link :to="{ name: 'edit', params: { id: memo.id } }">
+        {{ this.title(memo) }}
+      </router-link>
     </li>
   </ul>
   <p v-else>メモはありません</p>
