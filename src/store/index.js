@@ -17,12 +17,19 @@ export default createStore({
     }
   },
   mutations: {
-    save(state, content) {
-      let memo = {
-        id: uuid(),
-        content: content,
+    save(state, memo) {
+      if (memo.id) {
+        /// update
+        let updateMemo = state.memos.find((memo) => memo.id === memo.id);
+        updateMemo.content = memo.content;
+      } else {
+        /// create
+        let newMemo = {
+          id: uuid(),
+          content: memo.content,
+        }
+        state.memos.unshift(newMemo)
       }
-      state.memos.unshift(memo)
     }
   },
   actions: {

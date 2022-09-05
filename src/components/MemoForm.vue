@@ -14,7 +14,13 @@ export default {
   },
   methods: {
     save() {
-      this.$store.commit("save", this.content);
+      let memo = {
+        content: this.content,
+      };
+      if (this.memo.id) {
+        memo.id = this.memo.id;
+      }
+      this.$store.commit("save", memo);
       this.$router.push("/");
     },
   },
