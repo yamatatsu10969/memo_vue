@@ -1,4 +1,5 @@
 import { createStore } from 'vuex'
+import { v4 as uuid } from 'uuid';
 
 export default createStore({
   state: {
@@ -18,7 +19,7 @@ export default createStore({
   mutations: {
     save(state, content) {
       let memo = {
-        id: (state.memos.length + 1).toString(), // TODO: UUID にする
+        id: uuid(),
         content: content,
       }
       state.memos.unshift(memo)
