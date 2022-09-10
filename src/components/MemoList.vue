@@ -29,5 +29,19 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+li a {
+  color: #555;
+  text-decoration: underline;
+  width: 100%;
+  display: block;
+}
+</style>
