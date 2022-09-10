@@ -30,6 +30,11 @@ export default createStore({
         }
         state.memos.unshift(newMemo)
       }
+    },
+    delete(state, id) {
+      if (id) {
+        state.memos = state.memos.filter(memo => memo.id !== id)
+      }
     }
   },
   actions: {
