@@ -1,5 +1,10 @@
 import { createStore } from 'vuex'
 import { v4 as uuid } from 'uuid';
+import { VuexPersistence } from "vuex-persist";
+
+const vuexPersist = new VuexPersistence({
+  storage: localStorage
+})
 
 export default createStore({
   state: {
@@ -17,6 +22,7 @@ export default createStore({
     }
   },
   mutations: {
+    RESTORE_MUTATION: vuexPersist.RESTORE_MUTATION,
     save(state, memo) {
       if (memo.id) {
         /// update
@@ -40,5 +46,6 @@ export default createStore({
   actions: {
   },
   modules: {
-  }
+  },
+  plugins: [vuexPersist.plugin]
 })
