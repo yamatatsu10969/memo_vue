@@ -20,7 +20,7 @@ export default createStore({
     save(state, memo) {
       if (memo.id) {
         /// update
-        let updateMemo = state.memos.find((memo) => memo.id === memo.id);
+        let updateMemo = state.memos.find((storedMemo) => storedMemo.id === memo.id);
         updateMemo.content = memo.content;
       } else {
         /// create
