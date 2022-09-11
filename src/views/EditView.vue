@@ -25,7 +25,6 @@ export default {
   computed: {
     memo() {
       const id = this.$route.params.id;
-      console.log("🌞: 入れるよ");
       return this.$store.getters.getMemoById(id);
     },
   },

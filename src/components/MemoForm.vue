@@ -17,25 +17,7 @@ export default {
       return this.memo.id;
     },
   },
-  // forceUpdate() {
-  //   console.log("forceUpdate");
-  //   return;
-  // },
-  // beforeCreate() {
-  //   console.log("beforeCreate");
-  // },
-  // created() {
-  //   console.log("created");
-  // },
-  // updated() {
-  //   console.log("updated");
-  // },
-  // TODO(yamatatsu): バグ修正
-  /// render した後にここは一度しか通らない
-  /// また render をかける方法がわからない
-  /// edit/** を何回か行くとデータが変わらない
   data() {
-    console.log(this.memo.content);
     return {
       content: this.memo.content,
     };
