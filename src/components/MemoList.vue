@@ -1,7 +1,8 @@
 <template>
   <ul v-if="hasMemos">
     <li v-for="memo in memos" :key="memo.id">
-      <router-link :to="{ name: 'edit', params: { id: memo.id } }">
+      <div v-if="isEditMemo(memo)">{{ this.title(memo) }}</div>
+      <router-link v-else :to="{ name: 'edit', params: { id: memo.id } }">
         {{ this.title(memo) }}
       </router-link>
     </li>
@@ -25,6 +26,10 @@ export default {
     title(memo) {
       return memo.content.split("\n")[0];
     },
+    isEditMemo(memo) {
+      let editMemo = this.$store.getters.getEditMemo;
+      return editMemo && editMemo.id === memo.id;
+    },
   },
 };
 </script>
@@ -39,7 +44,6 @@ li {
   margin-bottom: 10px;
 }
 li a {
-  color: #555;
   text-decoration: underline;
   width: 100%;
   display: block;

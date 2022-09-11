@@ -8,7 +8,8 @@ const vuexPersist = new VuexPersistence({
 
 export default createStore({
   state: {
-    memos: []
+    memos: [],
+    editMemo: undefined,
   },
   getters: {
     getAll: (state) => {
@@ -19,6 +20,9 @@ export default createStore({
     },
     getMemoById: (state) => (id) => {
       return state.memos.find((memo) => memo.id === id);
+    },
+    getEditMemo: (state) => {
+      return state.editMemo;
     }
   },
   mutations: {
@@ -41,6 +45,9 @@ export default createStore({
       if (id) {
         state.memos = state.memos.filter(memo => memo.id !== id)
       }
+    },
+    setEditMemo(state, memo) {
+      state.editMemo = memo;
     }
   },
   actions: {
