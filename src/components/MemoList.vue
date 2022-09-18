@@ -12,16 +12,14 @@
 </template>
 
 <script>
+import { mapState } from "vuex";
+
 export default {
   name: "MemoList",
-  computed: {
-    memos() {
-      return this.$store.getters.getAll;
-    },
-    hasMemos() {
-      return this.$store.getters.hasMemos;
-    },
-  },
+  computed: mapState({
+    memos: (state) => state.memos,
+    hasMemos: (state) => state.memos.length > 0,
+  }),
   methods: {
     title(memo) {
       return memo.content.split("\n")[0];

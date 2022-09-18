@@ -12,12 +12,6 @@ export default createStore({
     editMemo: undefined,
   },
   getters: {
-    getAll: (state) => {
-      return state.memos;
-    },
-    hasMemos: (state) => {
-      return state.memos.length;
-    },
     getMemoById: (state) => (id) => {
       return state.memos.find((memo) => memo.id === id);
     },
