@@ -30,11 +30,11 @@ export default createStore({
     save(state, memo) {
       if (memo.id) {
         /// update
-        let updateMemo = state.memos.find((storedMemo) => storedMemo.id === memo.id);
+        const updateMemo = state.memos.find((storedMemo) => storedMemo.id === memo.id);
         updateMemo.content = memo.content;
       } else {
         /// create
-        let newMemo = {
+        const newMemo = {
           id: uuid(),
           content: memo.content,
         }
